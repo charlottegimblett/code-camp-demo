@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@code-camp-demo/orders": ["libs/orders/src/index.ts"],
+      "@code-camp-demo/products": ["libs/products/src/index.ts"],
+      "@code-camp-demo/shared-ui": ["libs/shared/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
