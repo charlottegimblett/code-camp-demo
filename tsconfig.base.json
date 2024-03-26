@@ -17,7 +17,8 @@
     "paths": {
       "@code-camp-demo/orders": ["libs/orders/src/index.ts"],
       "@code-camp-demo/products": ["libs/products/src/index.ts"],
-      "@code-camp-demo/shared-ui": ["libs/shared/ui/src/index.ts"]
+      "@code-camp-demo/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "header/Module": ["apps/header/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

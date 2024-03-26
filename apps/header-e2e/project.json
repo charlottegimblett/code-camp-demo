@@ -1,0 +1,26 @@
+{
+  "name": "header-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/header-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/header-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "header:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "header:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "header:serve-static"
+        }
+      }
+    }
+  },
+  "implicitDependencies": ["header"],
+  "tags": []
+}
