@@ -9,7 +9,7 @@ export function App() {
   return (
     <React.Suspense fallback={null}>
       <Header />
-      Hell from the host app
+      Hello from the host app
     </React.Suspense>
   );
 }
