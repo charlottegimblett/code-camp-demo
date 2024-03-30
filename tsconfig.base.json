@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "header/Module": ["apps/header/src/remote-entry.ts"]
+      "header/Module": ["apps/header/src/remote-entry.ts"],
+      "hero/Module": ["apps/hero/src/remote-entry.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
