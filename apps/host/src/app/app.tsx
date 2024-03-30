@@ -6,9 +6,11 @@ import { loadRemoteModule } from '@nx/react/mf';
 
 export function App() {
   const Header = React.lazy(() => loadRemoteModule('header', './Module'));
+  const Hero = React.lazy(() => loadRemoteModule('hero', './Module'));
   return (
     <React.Suspense fallback={null}>
       <Header />
+      <Hero />
       Hello from the host app
     </React.Suspense>
   );
