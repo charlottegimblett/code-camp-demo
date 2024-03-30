@@ -1,13 +1,19 @@
 import styled from 'styled-components';
 
 const StyledApp = styled.div`
-  // Your style here
+  background-color: #BDDEF2;
+  height: 25rem;
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
 `;
 
 export function App() {
   return (
     <StyledApp>
-      I AM YOUR HERO
+      Hero Image
     </StyledApp>
   );
 }
