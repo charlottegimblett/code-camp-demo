@@ -14,7 +14,7 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['header', 'hero'],
+  remotes: ['header', 'hero', 'trekking'],
 };
 
 export default config;
