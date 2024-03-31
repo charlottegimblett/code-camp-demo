@@ -1,9 +1,9 @@
 {
-  "name": "hero-e2e",
+  "name": "home-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/hero-e2e/src",
+  "sourceRoot": "apps/home-e2e/src",
   "targets": {},
-  "implicitDependencies": ["hero"],
+  "implicitDependencies": ["home"],
   "tags": []
 }

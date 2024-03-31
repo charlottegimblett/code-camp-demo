@@ -1,7 +1,7 @@
 {
-  "name": "trekking",
+  "name": "home",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/trekking/src",
+  "sourceRoot": "apps/home/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,15 +10,15 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/trekking",
-        "index": "apps/trekking/src/index.html",
+        "outputPath": "dist/apps/home",
+        "index": "apps/home/src/index.html",
         "baseHref": "/",
-        "main": "apps/trekking/src/main.tsx",
-        "tsConfig": "apps/trekking/tsconfig.app.json",
-        "assets": ["apps/trekking/src/assets"],
+        "main": "apps/home/src/main.tsx",
+        "tsConfig": "apps/home/tsconfig.app.json",
+        "assets": [],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "apps/trekking/webpack.config.ts"
+        "webpackConfig": "apps/home/webpack.config.ts"
       },
       "configurations": {
         "development": {
@@ -30,8 +30,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/trekking/src/environments/environment.ts",
-              "with": "apps/trekking/src/environments/environment.prod.ts"
+              "replace": "apps/home/src/environments/environment.ts",
+              "with": "apps/home/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -47,16 +47,16 @@
       "executor": "@nx/react:module-federation-dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "trekking:build",
+        "buildTarget": "home:build",
         "hmr": true,
-        "port": 4198
+        "port": 4199
       },
       "configurations": {
         "development": {
-          "buildTarget": "trekking:build:development"
+          "buildTarget": "home:build:development"
         },
         "production": {
-          "buildTarget": "trekking:build:production",
+          "buildTarget": "home:build:production",
           "hmr": false
         }
       }
@@ -65,16 +65,16 @@
       "executor": "@nx/web:file-server",
       "defaultConfiguration": "production",
       "options": {
-        "buildTarget": "trekking:build",
+        "buildTarget": "home:build",
         "watch": false,
-        "port": 4198
+        "port": 4199
       },
       "configurations": {
         "development": {
-          "buildTarget": "trekking:build:development"
+          "buildTarget": "home:build:development"
         },
         "production": {
-          "buildTarget": "trekking:build:production"
+          "buildTarget": "home:build:production"
         }
       }
     }

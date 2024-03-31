@@ -1,6 +1,5 @@
 { 
     "header": "http://localhost:4197", 
-    "hero": "http://localhost:4199", 
-    "trekking": "http://localhost:4198"
+    "home": "http://localhost:4199"
 }
 
