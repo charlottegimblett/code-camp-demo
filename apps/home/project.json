@@ -15,7 +15,7 @@
         "baseHref": "/",
         "main": "apps/home/src/main.tsx",
         "tsConfig": "apps/home/tsconfig.app.json",
-        "assets": [],
+        "assets": ["apps/home/src/assets/sunset.jpg"],
         "styles": [],
         "scripts": [],
         "webpackConfig": "apps/home/webpack.config.ts"

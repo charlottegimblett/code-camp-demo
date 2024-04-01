@@ -39,7 +39,7 @@ export function App() {
   return (
     <HeaderBox>
       <div>
-        <LogoText>LOGO</LogoText>
+        <LogoText>Adventure Plus</LogoText>
       </div>
       <div>
         <Search>

@@ -1,14 +1,21 @@
 import styled from 'styled-components';
+import sunset from '../assets/sunset.jpg';
+import trekking from '../assets/trekking.jpg';
+import campervan from '../assets/campervan.jpg';
+import hotYoga from '../assets/hot-yoga.jpg';
 
 const Hero = styled.div`
-  background-color: #BDDEF2;
   height: 25rem;
   width: 100%;
   margin: 1rem auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10rem;
+  background-color: #401506;
+
+  > img {
+    width: 100%; /* width of container */
+    height: 25rem; /* height of container */
+    object-fit: cover;
+    // margin: -5rem 0;  
+  }
 `;
 
 const ActivitiesBox = styled.div`
@@ -19,28 +26,36 @@ const ActivitiesBox = styled.div`
   gap: 1rem;
 `;
 
-const Trekking = styled.div`
+const Activity = styled.div`
   display: flex;
   width: 100%;
-  background-color: #401506;
+  background-color: #3B5948;
   color: #fff;
   font-size: 2rem;
   font-weight 700;
-  justify-content: center;
+  align-items: center;
   padding-top: 1rem;
   height: 20rem;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  > img {
+    height: 17rem;
+    width: 100%;
+  }
+
 `;
 
 export function App() {
   return (
     <>
     <Hero>
-      Hero Image
+      <img src={sunset}/>
     </Hero>
     <ActivitiesBox>
-      <Trekking>Trekking</Trekking>
-      <Trekking>Campervan Hire</Trekking>
-      <Trekking>Hot Yoga Classes</Trekking>
+      <Activity>Trekking <img src={trekking}/></Activity>
+      <Activity>Campervan Hire <img src={campervan}/></Activity>
+      <Activity>Hot Yoga Classes <img src={hotYoga}/></Activity>
     </ActivitiesBox>
     </>
   );
