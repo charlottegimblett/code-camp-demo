@@ -1,5 +1,6 @@
 { 
     "header": "http://localhost:4197", 
-    "home": "http://localhost:4199"
+    "home": "http://localhost:4199",
+    "footer": "http://localhost:4198"
 }
 

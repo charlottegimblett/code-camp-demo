@@ -13,12 +13,14 @@ const HomeBox = styled.div`
 export function App() {
   const Header = React.lazy(() => loadRemoteModule('header', './Module'));
   const Home = React.lazy(() => loadRemoteModule('home', './Module'));
+  const Footer = React.lazy(() => loadRemoteModule('footer', './Module'));
   return (
     <React.Suspense fallback={null}>
       <Header />
       <HomeBox>
         <Home />
       </HomeBox>
+      <Footer/>
     </React.Suspense>
   );
 }
