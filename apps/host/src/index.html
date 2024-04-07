@@ -5,8 +5,20 @@
     <title>Host</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/import-map-overrides/dist/import-map-overrides.js"
+    ></script>
+    <script type="importmap" src="/assets/importmap.json"></script>
   </head>
-  <body style="margin:0; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+  <body
+    style="
+      margin: 0;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+    "
+  >
     <div id="root"></div>
+    <import-map-overrides-full></import-map-overrides-full>
   </body>
 </html>

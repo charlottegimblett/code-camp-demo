@@ -2,7 +2,9 @@
   "name": "@code-camp-demo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npx nx run-many --parallel --target=serve --projects=host,header,footer,home --maxParallel=100"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
