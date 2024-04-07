@@ -8,8 +8,10 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
+  it('should have activities', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/Welcome home/gi)).toBeTruthy();
+    expect(getByText(/Trekking/gi)).toBeTruthy();
+    expect(getByText(/Campervan Hire/gi)).toBeTruthy();
+    expect(getByText(/Hot Yoga Classes/gi)).toBeTruthy();
   });
 });

@@ -8,8 +8,12 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
+  it('should have footer text', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/Welcome footer/gi)).toBeTruthy();
+    expect(
+      getByText(
+        /Come chat to Charlotte and Malin about our adventures today! Or micro frontends too!/gi
+      )
+    ).toBeTruthy();
   });
 });

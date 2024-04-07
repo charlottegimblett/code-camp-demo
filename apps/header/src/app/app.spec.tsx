@@ -8,8 +8,8 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
+  it('should have the website name', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/Hello/gi)).toBeTruthy();
+    expect(getByText(/Adventure Plus/gi)).toBeTruthy();
   });
 });
