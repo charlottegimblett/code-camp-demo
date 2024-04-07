@@ -2,6 +2,8 @@
   "imports": {
     "header": "http://localhost:4197",
     "home": "http://localhost:4199",
-    "footer": "http://localhost:4198"
+    "footer": "http://localhost:4198",
+    "react": "https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js",
+    "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/index.min.js"
   }
 }
