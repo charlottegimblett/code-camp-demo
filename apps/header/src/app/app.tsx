@@ -1,28 +1,33 @@
 import styled from 'styled-components';
 import { Button } from 'antd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass, faCartShopping, faUser } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faMagnifyingGlass,
+  faCartShopping,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
+import { Colours, FontSize, FontWeights } from '@code-camp-demo/design-system';
 
 const HeaderBox = styled.div`
   display: flex;
   width: 100% - 3rem;
   height: 4rem;
-  background-color: #3B5948;
+  background-color: ${Colours.Green};
   padding: 0 1.5rem;
   align-items: center;
   justify-content: space-between;
 `;
 
 const LogoText = styled.div`
-  color: #fff;
-  font-weight: 700;
-  font-size: 2rem;
+  color: ${Colours.White};
+  font-weight: ${FontWeights.Bold};
+  font-size: ${FontSize.large};
 `;
 
 const Search = styled.div`
-  background-color: #fff;
+  background-color: ${Colours.White};
   height: 2rem;
-  width 14rem;
+  width: 14rem;
   border-radius: 4px;
   align-items: center;
   display: flex;
@@ -43,12 +48,16 @@ export function App() {
       </div>
       <div>
         <Search>
-          <FontAwesomeIcon icon={faMagnifyingGlass} color='#401506'/>
+          <FontAwesomeIcon icon={faMagnifyingGlass} color={Colours.Red} />
         </Search>
       </div>
       <AccountBox>
-        <FontAwesomeIcon icon={faCartShopping} size='lg' color='#ffffff'/>
-        <FontAwesomeIcon icon={faUser} size='lg' color='#ffffff' />
+        <FontAwesomeIcon
+          icon={faCartShopping}
+          size="lg"
+          color={Colours.White}
+        />
+        <FontAwesomeIcon icon={faUser} size="lg" color={Colours.White} />
       </AccountBox>
     </HeaderBox>
   );
