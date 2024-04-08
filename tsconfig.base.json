@@ -14,6 +14,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "strict": true,
     "paths": {
       "@code-camp-demo/design-system": ["libs/design-system/src/index.ts"],
       "@code-camp-demo/ui-components": ["libs/ui-components/src/index.ts"],
