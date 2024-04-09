@@ -40,8 +40,14 @@ const AccountBox = styled.div`
   gap: 1.5rem;
 `;
 
+const RightActionsBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+`;
+
 export function App() {
-  const sun: WeatherType = "sun";
+  const sun: WeatherType = 'sun';
   return (
     <HeaderBox>
       <div>
@@ -52,17 +58,17 @@ export function App() {
           <FontAwesomeIcon icon={faMagnifyingGlass} color={Colours.Red} />
         </Search>
       </div>
-      <div>
-      <Weather weather={sun} />
-      <AccountBox>
-        <FontAwesomeIcon
-          icon={faCartShopping}
-          size="lg"
-          color={Colours.White}
-        />
-        <FontAwesomeIcon icon={faUser} size="lg" color={Colours.White} />
-      </AccountBox>
-      </div>
+      <RightActionsBox>
+        <Weather weather={sun} />
+        <AccountBox>
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            size="lg"
+            color={Colours.White}
+          />
+          <FontAwesomeIcon icon={faUser} size="lg" color={Colours.White} />
+        </AccountBox>
+      </RightActionsBox>
     </HeaderBox>
   );
 }
