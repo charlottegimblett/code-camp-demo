@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMagnifyingGlass,
@@ -7,6 +6,7 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { Colours, FontSize, FontWeights } from '@code-camp-demo/design-system';
+import { Weather, WeatherType } from '@code-camp-demo/ui-components';
 
 const HeaderBox = styled.div`
   display: flex;
@@ -41,6 +41,7 @@ const AccountBox = styled.div`
 `;
 
 export function App() {
+  const sun: WeatherType = "sun";
   return (
     <HeaderBox>
       <div>
@@ -51,6 +52,8 @@ export function App() {
           <FontAwesomeIcon icon={faMagnifyingGlass} color={Colours.Red} />
         </Search>
       </div>
+      <div>
+      <Weather weather={sun} />
       <AccountBox>
         <FontAwesomeIcon
           icon={faCartShopping}
@@ -59,6 +62,7 @@ export function App() {
         />
         <FontAwesomeIcon icon={faUser} size="lg" color={Colours.White} />
       </AccountBox>
+      </div>
     </HeaderBox>
   );
 }
