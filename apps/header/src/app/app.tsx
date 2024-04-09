@@ -7,6 +7,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Colours, FontSize, FontWeights } from '@code-camp-demo/design-system';
 import { Weather, WeatherType } from '@code-camp-demo/ui-components';
+import { useEffect } from 'react';
+import { useGetWeather } from '@code-camp-demo/header-bff';
 
 const HeaderBox = styled.div`
   display: flex;
@@ -47,6 +49,13 @@ const RightActionsBox = styled.div`
 `;
 
 export function App() {
+  let weather;
+  useEffect(() => {
+    weather = useGetWeather();
+  }, []);
+
+  console.log('weather', weather);
+
   const sun: WeatherType = 'sun';
   return (
     <HeaderBox>

@@ -5,76 +5,38 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/esbuild:esbuild",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
+      "defaultConfiguration": "development",
       "options": {
-        "compiler": "babel",
-        "outputPath": "dist/apps/header",
-        "index": "apps/header/src/index.html",
-        "baseHref": "/",
-        "main": "apps/header/src/main.ts",
-        "tsConfig": "apps/header/tsconfig.app.json",
-        "assets": ["apps/header/src/favicon.ico", "apps/header/src/assets"],
-        "styles": [],
-        "scripts": [],
-        "webpackConfig": "apps/header/webpack.config.ts"
-      },
-      "configurations": {
-        "development": {
-          "extractLicenses": false,
-          "optimization": false,
-          "sourceMap": true,
-          "vendorChunk": true
+        "bundle": true,
+        "esbuildOptions": {
+          "outExtension": {
+            ".js": ".js"
+          },
+          "sourcemap": true
         },
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/header/src/environments/environment.ts",
-              "with": "apps/header/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
-        }
+        "format": ["cjs"],
+        "generatePackageJson": false,
+        "main": "apps/header-bff/server/index.ts",
+        "outputPath": "dist/apps/header-bff",
+        "platform": "node",
+        "thirdParty": true,
+        "tsConfig": "apps/header-bff/tsconfig.bff.json"
       }
     },
     "serve": {
-      "executor": "@nx/react:module-federation-dev-server",
+      "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "header:build",
-        "hmr": true,
-        "port": 4197
+        "buildTarget": "header-bff:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "header:build:development"
+          "buildTarget": "header-bff:build:development"
         },
         "production": {
-          "buildTarget": "header:build:production",
-          "hmr": false
-        }
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "defaultConfiguration": "production",
-      "options": {
-        "buildTarget": "header:build",
-        "watch": false,
-        "port": 4197
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "header:build:development"
-        },
-        "production": {
-          "buildTarget": "header:build:production"
+          "buildTarget": "header-bff:build:production"
         }
       }
     },
@@ -82,7 +44,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/header/jest.config.ts"
+        "jestConfig": "apps/header-bff/jest.config.ts"
       }
     }
   },

@@ -10,7 +10,7 @@
   "include": [],
   "references": [
     {
-      "path": "./tsconfig.app.json"
+      "path": "./tsconfig.bff.json"
     },
     {
       "path": "./tsconfig.spec.json"

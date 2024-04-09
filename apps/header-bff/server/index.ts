@@ -1,30 +1,28 @@
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
-import { z } from 'zod';
-import { db } from './db';
 import { publicProcedure, router } from './trpc';
+import { fetchWeatherApi } from 'openmeteo';
+import cors from 'cors';
+
+const url = 'https://api.open-meteo.com/v1/forecast';
 
 const appRouter = router({
-  userList: publicProcedure.query(async () => {
-    const users = await db.user.findMany();
-    return users;
+  getWeather: publicProcedure.query(async () => {
+    const params = {
+      latitude: 52.52,
+      longitude: 13.41,
+      current: 'weather_code',
+      hourly: ['temperature_2m', 'weather_code'],
+    };
+
+    const weather = await fetchWeatherApi(url, params);
+    return weather[0];
   }),
-  userById: publicProcedure.input(z.string()).query(async (opts) => {
-    const { input } = opts;
-    const user = await db.user.findById(input);
-    return user;
-  }),
-  userCreate: publicProcedure
-    .input(z.object({ name: z.string() }))
-    .mutation(async (opts) => {
-      const { input } = opts;
-      const user = await db.user.create(input);
-      return user;
-    }),
 });
 
 export type AppRouter = typeof appRouter;
 
 const server = createHTTPServer({
+  middleware: cors(),
   router: appRouter,
 });
 
