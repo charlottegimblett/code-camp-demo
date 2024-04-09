@@ -1,8 +1,8 @@
 {
   "imports": {
-    "header": "http://localhost:4197",
-    "home": "http://localhost:4199",
-    "footer": "http://localhost:4198",
+    "header": "https://charlottegimblett.github.io/code-camp-demo/assets/header.js",
+    "home": "https://charlottegimblett.github.io/code-camp-demo/assets/home.js",
+    "footer": "https://charlottegimblett.github.io/code-camp-demo/assets/footer.js",
     "react": "https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js",
     "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@18.2.0/index.min.js"
   }
