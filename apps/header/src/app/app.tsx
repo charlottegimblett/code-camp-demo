@@ -19,7 +19,7 @@ const HeaderBox = styled.div`
 `;
 
 const LogoText = styled.div`
-  color: ${Colours.White};
+  color: ${Colours.Green};
   font-weight: ${FontWeights.Bold};
   font-size: ${FontSize.large};
 `;
