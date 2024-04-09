@@ -10,6 +10,10 @@ permissions:
   actions: read
   contents: read
 
+env:
+  NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+  NX_NO_CLOUD: true
+
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -18,12 +22,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Cache node_modules
       - uses: actions/setup-node@v3
         with:
           node-version: 20
           cache: 'npm'
+
+      - name: Build Nx cache
+        uses: actions/cache@v3
+        with:
+          path: .nx/cache
+          key: nx-${{ hashFiles('package-lock.json') }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            nx-${{ hashFiles('package-lock.json') }}-${{ github.ref_name }}-
+
       - run: npm ci
+
       - uses: nrwl/nx-set-shas@v4
 
       - run: npx nx affected -t lint test build
