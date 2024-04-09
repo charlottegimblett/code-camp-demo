@@ -5,7 +5,7 @@ export const Hero = styled.div`
   height: 25rem;
   width: 100%;
   margin: 1rem auto;
-  background-color: ${Colours.Red};
+  background-color: ${Colours.Green};
 
   > img {
     width: 100%; /* width of container */

@@ -12,7 +12,7 @@ const HeaderBox = styled.div`
   display: flex;
   width: 100% - 3rem;
   height: 4rem;
-  background-color: ${Colours.Red};
+  background-color: ${Colours.Green};
   padding: 0 1.5rem;
   align-items: center;
   justify-content: space-between;
