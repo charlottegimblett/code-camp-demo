@@ -6,8 +6,8 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { Colours, FontSize, FontWeights } from '@code-camp-demo/design-system';
-import { Weather, WeatherType } from '@code-camp-demo/ui-components';
-import { useEffect } from 'react';
+import { Weather } from '@code-camp-demo/ui-components';
+import { useEffect, useState } from 'react';
 import { useGetWeather } from '@code-camp-demo/header-bff';
 
 const HeaderBox = styled.div`
@@ -49,14 +49,14 @@ const RightActionsBox = styled.div`
 `;
 
 export function App() {
-  let weather;
+  const [weather, setWeather] = useState<any>();
+
   useEffect(() => {
-    weather = useGetWeather();
+    useGetWeather().then((res) => {
+      setWeather(res);
+    });
   }, []);
 
-  console.log('weather', weather);
-
-  const sun: WeatherType = 'sun';
   return (
     <HeaderBox>
       <div>
@@ -68,7 +68,9 @@ export function App() {
         </Search>
       </div>
       <RightActionsBox>
-        <Weather weather={sun} />
+        {weather?.current?.weatherCode && (
+          <Weather weatherCode={weather?.current?.weatherCode} />
+        )}
         <AccountBox>
           <FontAwesomeIcon
             icon={faCartShopping}

@@ -8,14 +8,24 @@ const url = 'https://api.open-meteo.com/v1/forecast';
 const appRouter = router({
   getWeather: publicProcedure.query(async () => {
     const params = {
-      latitude: 52.52,
-      longitude: 13.41,
-      current: 'weather_code',
-      hourly: ['temperature_2m', 'weather_code'],
+      latitude: -42,
+      longitude: 174,
+      current: ['rain', 'weather_code', 'cloud_cover'],
+      timezone: 'Pacific/Auckland',
     };
 
-    const weather = await fetchWeatherApi(url, params);
-    return weather[0];
+    const weathers = await fetchWeatherApi(url, params);
+    const weather = weathers[0];
+    const current = weather.current()!;
+    const weatherData = {
+      current: {
+        weatherCode: current.variables(1)!.value(),
+      },
+    };
+
+    console.log('weatherData', weatherData);
+
+    return weatherData;
   }),
 });
 

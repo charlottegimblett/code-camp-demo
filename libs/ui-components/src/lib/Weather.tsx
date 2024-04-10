@@ -3,10 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { Colours } from '@code-camp-demo/design-system';
 
-export type WeatherType = 'sun' | 'rain' | 'cloud';
-
 interface WeatherProps {
-  weather: WeatherType;
+  weatherCode: number;
 }
 
 const WeatherBox = styled.div`
@@ -17,17 +15,15 @@ const WeatherBox = styled.div`
 `;
 
 export const Weather = (props: WeatherProps) => {
-  const { weather } = props;
+  const { weatherCode } = props;
 
   const Icon = () => {
-    switch (weather) {
-      case 'sun':
-        return <FontAwesomeIcon icon={faSun} color="#F2A007" size="lg" />;
-      case 'rain':
-        return <FontAwesomeIcon icon={faCloudRain} color="#ffffff" />;
-      case 'cloud':
-        return <FontAwesomeIcon icon={faCloud} color="#4589CC" />;
-    }
+    if (weatherCode <= 3)
+      return <FontAwesomeIcon icon={faSun} color="#F2A007" size="lg" />;
+    if (weatherCode > 4 || weatherCode <= 77)
+      return <FontAwesomeIcon icon={faCloud} color="#ffffff" />;
+
+    return <FontAwesomeIcon icon={faCloudRain} color="#4589CC" />;
   };
 
   return (
