@@ -6,6 +6,9 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { Colours, FontSize, FontWeights } from '@code-camp-demo/design-system';
+import { Weather } from '@code-camp-demo/ui-components';
+import { useGetWeather } from '@code-camp-demo/header-bff';
+import { useEffect, useState } from 'react';
 
 const HeaderBox = styled.div`
   display: flex;
@@ -39,7 +42,21 @@ const AccountBox = styled.div`
   gap: 1.5rem;
 `;
 
+const RightActionsBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+`;
+
 export function App() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [weatherCode, setWeatherCode] = useState<any>();
+
+  useEffect(() => {
+    const response = useGetWeather();
+    setWeatherCode(response);
+  }, []);
+
   return (
     <HeaderBox>
       <div>
@@ -50,14 +67,17 @@ export function App() {
           <FontAwesomeIcon icon={faMagnifyingGlass} color={Colours.Red} />
         </Search>
       </div>
-      <AccountBox>
-        <FontAwesomeIcon
-          icon={faCartShopping}
-          size="lg"
-          color={Colours.White}
-        />
-        <FontAwesomeIcon icon={faUser} size="lg" color={Colours.White} />
-      </AccountBox>
+      <RightActionsBox>
+        {weatherCode && <Weather weatherCode={weatherCode} />}
+        <AccountBox>
+          <FontAwesomeIcon
+            icon={faCartShopping}
+            size="lg"
+            color={Colours.White}
+          />
+          <FontAwesomeIcon icon={faUser} size="lg" color={Colours.White} />
+        </AccountBox>
+      </RightActionsBox>
     </HeaderBox>
   );
 }
