@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMagnifyingGlass,
