@@ -45,7 +45,7 @@ const AccountBox = styled.div`
 const RightActionsBox = styled.div`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 `;
 
 export function App() {
