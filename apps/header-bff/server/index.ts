@@ -16,10 +16,10 @@ const appRouter = router({
 
     const weathers = await fetchWeatherApi(url, params);
     const weather = weathers[0];
-    const current = weather.current()!;
+    const current = weather.current();
     const weatherData = {
       current: {
-        weatherCode: current.variables(1)!.value(),
+        weatherCode: current?.variables(1)?.value(),
       },
     };
 
