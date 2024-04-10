@@ -23,9 +23,7 @@ const appRouter = router({
       },
     };
 
-    console.log('weatherData', weatherData);
-
-    return weatherData;
+    return weatherData?.current.weatherCode;
   }),
 });
 

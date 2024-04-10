@@ -7,8 +7,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Colours, FontSize, FontWeights } from '@code-camp-demo/design-system';
 import { Weather } from '@code-camp-demo/ui-components';
-import { useEffect, useState } from 'react';
 import { useGetWeather } from '@code-camp-demo/header-bff';
+import { useEffect, useState } from 'react';
 
 const HeaderBox = styled.div`
   display: flex;
@@ -49,12 +49,12 @@ const RightActionsBox = styled.div`
 `;
 
 export function App() {
-  const [weather, setWeather] = useState<any>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [weatherCode, setWeatherCode] = useState<any>();
 
   useEffect(() => {
-    useGetWeather().then((res) => {
-      setWeather(res);
-    });
+    const response = useGetWeather();
+    setWeatherCode(response);
   }, []);
 
   return (
@@ -68,9 +68,7 @@ export function App() {
         </Search>
       </div>
       <RightActionsBox>
-        {weather?.current?.weatherCode && (
-          <Weather weatherCode={weather?.current?.weatherCode} />
-        )}
+        {weatherCode && <Weather weatherCode={weatherCode} />}
         <AccountBox>
           <FontAwesomeIcon
             icon={faCartShopping}
