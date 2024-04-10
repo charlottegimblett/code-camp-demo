@@ -12,7 +12,7 @@ export const ActivitiesBox = styled.div`
 export const Activity = styled.div`
   display: flex;
   width: 100%;
-  background-color: ${Colours.Green};
+  background-color: ${Colours.Orange};
   color: ${Colours.White};
   font-size: ${FontSize.large};
   font-weight: ${FontWeights.Bold};
