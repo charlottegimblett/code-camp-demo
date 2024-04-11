@@ -1,5 +1,5 @@
 {
-  "name": "header-bff",
+  "name": "header-api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/header/src",
   "projectType": "application",
@@ -18,25 +18,25 @@
         },
         "format": ["cjs"],
         "generatePackageJson": false,
-        "main": "apps/header-bff/server/index.ts",
-        "outputPath": "dist/apps/header-bff",
+        "main": "apps/header-api/server/index.ts",
+        "outputPath": "dist/apps/header-api",
         "platform": "node",
         "thirdParty": true,
-        "tsConfig": "apps/header-bff/tsconfig.bff.json"
+        "tsConfig": "apps/header-api/tsconfig.bff.json"
       }
     },
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "header-bff:build"
+        "buildTarget": "header-api:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "header-bff:build:development"
+          "buildTarget": "header-api:build:development"
         },
         "production": {
-          "buildTarget": "header-bff:build:production"
+          "buildTarget": "header-api:build:production"
         }
       }
     },
@@ -44,7 +44,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/header-bff/jest.config.ts"
+        "jestConfig": "apps/header-api/jest.config.ts"
       }
     }
   },

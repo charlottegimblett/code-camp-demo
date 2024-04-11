@@ -18,7 +18,7 @@
     "paths": {
       "@code-camp-demo/design-system": ["libs/design-system/src/index.ts"],
       "@code-camp-demo/ui-components": ["libs/ui-components/src/index.ts"],
-      "@code-camp-demo/header-bff": ["apps/header-bff/client/index.ts"],
+      "@code-camp-demo/header-api": ["apps/header-api/client/index.ts"],
       "header/Module": ["apps/header/src/remote-entry.ts"],
       "home/Module": ["apps/home/src/remote-entry.ts"]
     }
