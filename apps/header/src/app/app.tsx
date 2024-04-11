@@ -7,7 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Colours, FontSize, FontWeights } from '@code-camp-demo/design-system';
 import { Weather } from '@code-camp-demo/ui-components';
-import { trpc, useGetWeather } from '@code-camp-demo/header-bff';
+import { trpc } from '@code-camp-demo/header-bff';
 import { useEffect, useState } from 'react';
 
 const HeaderBox = styled.div`

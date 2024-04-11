@@ -28,7 +28,7 @@ export const Weather = (props: WeatherProps) => {
 
   return (
     <WeatherBox>
-      <p>Weather</p>
+      <p>Current weather</p>
       <Icon />
     </WeatherBox>
   );
